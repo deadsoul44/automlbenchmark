@@ -7,6 +7,7 @@ types-xmltodict
 pandas-stubs
 boto3-stubs
 mypy
+perpetual
 
 # documentation
 mkdocs-material
