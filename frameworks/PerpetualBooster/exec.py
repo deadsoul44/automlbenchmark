@@ -37,15 +37,30 @@ def run(dataset: Dataset, config: TaskConfig):
     probabilities = predictor.predict_proba(X_test) if is_classification else None
     log.info(f"Finished predict in {predict.duration}s.")
 
+    def infer(data):
+        data = pd.read_parquet(data) if isinstance(data, str) else data
+        return predictor.predict(data)
+
+    inference_times = {}
+    if config.measure_inference_time:
+        inference_times["file"] = measure_inference_times(infer, dataset.inference_subsample_files(fmt="parquet"))
+        test_data = X_test if isinstance(X_test, pd.DataFrame) else pd.DataFrame(X_test)
+        inference_times["df"] = measure_inference_times(
+            infer,
+            [(1, test_data.sample(1, random_state=i)) for i in range(100)],
+        )
+        log.info(f"Finished inference time measurements.")
+
     save_predictions(dataset=dataset,
                      output_file=config.output_predictions_file,
                      probabilities=probabilities,
                      predictions=predictions,
                      truth=y_test,
-                     target_is_encoded=is_classification)
+                     target_is_encoded=encode)
 
     return dict(
         models_count=1,
         training_duration=training.duration,
-        predict_duration=predict.duration
+        predict_duration=predict.duration,
+        inference_times=inference_times,
     )
