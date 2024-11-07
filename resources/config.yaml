@@ -1,8 +1,8 @@
 ---
-project_repository: https://github.com/openml/automlbenchmark#stable      # this is also the url used to clone the repository on ec2 instances
-                                                                          # when running those without docker.
-                                                                          # to clone a specific branch/tag, add a url fragment, e.g.:
-                                                                          # https://github.com/openml/automlbenchmark#stable
+project_repository: https://github.com/deadsoul44/automlbenchmark#stable      # this is also the url used to clone the repository on ec2 instances
+                                                                              # when running those without docker.
+                                                                              # to clone a specific branch/tag, add a url fragment, e.g.:
+                                                                              # https://github.com/openml/automlbenchmark#stable
 
 user_dir:    # where to override settings with a custom config.yaml file and, for example, add custom frameworks, benchmark definitions or framework modules: set by caller (runbenchmark.py).
 input_dir:   # where the datasets are loaded by default: : set by caller (runbenchmark.py).

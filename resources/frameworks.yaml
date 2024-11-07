@@ -191,6 +191,12 @@ oboe:
 #    selection_method: random
 #    verbose: true
 
+PerpetualBooster:
+  version: 'latest'
+  description: |
+    A self-generalizing gradient boosting machine which doesn't need hyperparameter optimization.
+  project: https://github.com/perpetual-ml/perpetual
+
 TPOT:
   version: 'stable'
   description: |
