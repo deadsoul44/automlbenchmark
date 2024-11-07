@@ -55,7 +55,7 @@ def run(dataset: Dataset, config: TaskConfig):
                      probabilities=probabilities,
                      predictions=predictions,
                      truth=y_test,
-                     target_is_encoded=encode)
+                     target_is_encoded=is_classification)
 
     return dict(
         models_count=1,
