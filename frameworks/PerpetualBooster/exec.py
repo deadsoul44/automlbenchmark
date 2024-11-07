@@ -1,7 +1,7 @@
 import logging
 from importlib.metadata import version
 
-from perpetual import PerpetualBooster, __version__
+from perpetual import PerpetualBooster
 
 from amlb.benchmark import TaskConfig
 from amlb.data import Dataset
@@ -17,7 +17,6 @@ log = logging.getLogger(__name__)
 
 
 def run(dataset: Dataset, config: TaskConfig):
-    log.info(f"\n**** Perpetual [v{__version__}] ****\n")
     log.info(f"\n**** Perpetual [v{version('perpetual')}] ****\n")
 
     is_classification = config.type == 'classification'

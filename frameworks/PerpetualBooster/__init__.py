@@ -1,7 +1,8 @@
+from importlib.metadata import version as libversion
+
 
 def version():
-    from perpetual import __version__
-    return __version__
+    return libversion('perpetual')
 
 
 def run(*args, **kwargs):
