@@ -11,11 +11,14 @@ from amlb.utils import Timer, unsparsify
 
 import pandas as pd
 
+from frameworks.shared.callee import measure_inference_times
+
 log = logging.getLogger(__name__)
 
 # python3 runbenchmark.py perpetualbooster example 1h4c -m aws -f 0
 # python3 runbenchmark.py perpetualbooster openml/s/269 1h8c_gp3 -m aws -p 4
 # python3 runbenchmark.py perpetualbooster openml/s/271 1h8c_gp3 -m aws -p 4
+# python3 runbenchmark.py perpetualbooster openml/t/359938 1h8c_gp3 -m aws -p 4
 
 
 def run(dataset: Dataset, config: TaskConfig):
@@ -30,7 +33,7 @@ def run(dataset: Dataset, config: TaskConfig):
     predictor = PerpetualBooster(objective=objective)
 
     with Timer() as training:
-        predictor.fit(X_train, y_train, budget=1.0, timeout=config.max_runtime_seconds)
+        predictor.fit(X_train, y_train, budget=2.0, timeout=config.max_runtime_seconds)
     log.info(f"Finished fit in {training.duration}s.")
 
     with Timer() as predict:
