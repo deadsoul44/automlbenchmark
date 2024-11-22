@@ -1,0 +1,51 @@
+#build/run/local
+Dockerfile
+.marker*
+.setup/
+.installed
+.setup_env
+my_*
+
+# python env
+*.pyc
+__pycache__
+.python-version
+venv/
+
+# editors/IDEs
+.idea/
+*.iml
+*.swp
+launch.json
+
+# tmp files
+.ipynb_checkpoints/
+lib/
+logs/
+models/
+predictions/
+results/
+scores/
+setup/
+_site/
+*.lock
+*.log
+*.csv
+*.arff
+*.parquet
+
+# binary files
+*.zip
+*.tgz
+*.gz
+*.bz2
+*.png
+
+# Singurality files
+Singularityfile
+*.sif
+
+#whitelist
+!reports/**/*.csv
+!reports/**/*.png
+!docs/img/**/*.png

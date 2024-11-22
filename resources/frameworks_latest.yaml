@@ -1,0 +1,115 @@
+---
+#
+#  Please note: frameworks defined in this file are all set to "latest" which is usually not be a stable/release version
+#  but rather the current state of `master` branch for example or the last nightly build.
+#
+
+#########################
+### AutoML frameworks ###
+#########################
+
+AutoGluon:
+  version: "latest"
+
+AutoGluon_bestquality:
+  extends: AutoGluon
+  params:
+    presets: best_quality
+
+AutoGluon_hq:
+  extends: AutoGluon
+  params:
+    presets: high_quality
+
+AutoGluon_gq:
+  extends: AutoGluon
+  params:
+    presets: good_quality
+
+autosklearn:
+  version: 'latest'
+
+autosklearn2:
+  extends: autosklearn
+  params:
+    _askl2: true
+
+AutoWEKA:
+  version: 'latest'
+
+flaml:
+  version: 'latest'
+
+GAMA:
+  version: 'latest'
+
+H2OAutoML:
+  version: 'latest'
+
+hyperoptsklearn:
+  version: 'latest'
+
+lightautoml:
+  version: 'latest'
+
+mljarsupervised:
+  version: 'latest'
+
+mljarsupervised_compete:
+  extends: mljarsupervised
+  params:
+    mode: Compete   # set mode for Compete, default mode is Explain
+
+MLNet:
+  version: 'latest'
+
+MLPlan:
+  abstract: true
+  version: 'latest'
+
+MLPlanSKLearn:
+  extends: MLPlan
+  params:
+    _backend: sklearn
+
+MLPlanWEKA:
+  extends: MLPlan
+  params:
+    _backend: weka
+
+mlr3automl:
+  version: 'latest'
+
+NaiveAutoML:
+  version: 'latest'
+
+oboe:
+  version: 'latest'
+
+TPOT:
+  version: 'latest'
+
+FEDOT:
+  version: 'latest'
+
+#######################################
+### Non AutoML reference frameworks ###
+#######################################
+
+constantpredictor: {}
+
+DecisionTree:
+  version: 'latest'
+
+RandomForest:
+  version: 'latest'
+  params:
+    n_estimators: 2000
+
+ranger:
+  version: 'latest'
+
+TunedRandomForest:
+  version: 'latest'
+  params:
+    n_estimators: 2000
