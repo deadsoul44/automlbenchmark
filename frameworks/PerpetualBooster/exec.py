@@ -43,9 +43,9 @@ def run(dataset: Dataset, config: TaskConfig):
         y_test = dataset.test.y_enc
     else:
         X_train = dataset.train.X
-        y_train = dataset.train.y.flatten()
+        y_train = dataset.train.y.to_numpy().flatten()
         X_test = dataset.test.X
-        y_test = dataset.test.y.flatten()
+        y_test = dataset.test.y.to_numpy().flatten()
 
     objective = "LogLoss" if is_classification else "SquaredLoss"
     timeout = config.max_runtime_seconds
