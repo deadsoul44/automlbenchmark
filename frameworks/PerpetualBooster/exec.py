@@ -26,8 +26,9 @@ log = logging.getLogger(__name__)
 # python3 runbenchmark.py perpetualbooster openml/t/189356 -f 0
 # python3 runbenchmark.py perpetualbooster openml/s/269 10m8c_gp3 -m aws -p 3
 # python3 runbenchmark.py perpetualbooster openml/s/271 10m8c_gp3 -m aws -p 3
-# python3 runbenchmark.py autogluon_bestquality openml/s/269 10m8c_gp3 -m aws -p 3
+# python3 runbenchmark.py autogluon_bestquality openml/s/269 5m8c_gp3 -m aws -p 3
 # python3 runbenchmark.py autogluon_bestquality openml/s/271 10m8c_gp3 -m aws -p 3
+# python3 runbenchmark.py perpetualbooster regression 1h4c -m aws -p 3
 
 
 def run(dataset: Dataset, config: TaskConfig):
@@ -35,10 +36,16 @@ def run(dataset: Dataset, config: TaskConfig):
 
     is_classification = config.type == 'classification'
 
-    X_train = dataset.train.X
-    y_train = dataset.train.y_enc
-    X_test = dataset.test.X
-    y_test = dataset.test.y_enc
+    if is_classification:
+        X_train = dataset.train.X
+        y_train = dataset.train.y_enc
+        X_test = dataset.test.X
+        y_test = dataset.test.y_enc
+    else:
+        X_train = dataset.train.X
+        y_train = dataset.train.y.flatten()
+        X_test = dataset.test.X
+        y_test = dataset.test.y.flatten()
 
     objective = "LogLoss" if is_classification else "SquaredLoss"
     timeout = config.max_runtime_seconds
@@ -46,7 +53,7 @@ def run(dataset: Dataset, config: TaskConfig):
 
     with Timer() as training:
         model = PerpetualBooster(objective=objective)
-        model.fit(X_train, y_train, budget=0.1, timeout=timeout, memory_limit=memory_limit, iteration_limit=10000)
+        model.fit(X_train, y_train, budget=1.0, timeout=timeout, memory_limit=memory_limit, iteration_limit=10000)
     log.info(f"Finished fit in {training.duration}s.")
     log.info(f"Number of trees: {model.number_of_trees}.")
 
