@@ -53,7 +53,7 @@ def run(dataset: Dataset, config: TaskConfig):
 
     with Timer() as training:
         model = PerpetualBooster(objective=objective)
-        model.fit(X_train, y_train, budget=1.0, timeout=timeout, memory_limit=memory_limit, iteration_limit=10000)
+        model.fit(X_train, y_train, budget=0.5, timeout=timeout, memory_limit=memory_limit, iteration_limit=10000)
     log.info(f"Finished fit in {training.duration}s.")
     log.info(f"Number of trees: {model.number_of_trees}.")
 
