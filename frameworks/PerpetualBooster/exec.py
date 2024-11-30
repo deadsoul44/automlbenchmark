@@ -21,7 +21,7 @@ log = logging.getLogger(__name__)
 # python3 runbenchmark.py perpetualbooster openml/t/359938 1h8c_gp3 -m aws -p 4
 # python3 runbenchmark.py perpetualbooster openml/t/359933 -f 0
 # python3 runbenchmark.py perpetualbooster openml/t/146820
-# python3 runbenchmark.py perpetualbooster openml/t/2073
+# python3 runbenchmark.py perpetualbooster openml.org/t/361940
 # python3 runbenchmark.py perpetualbooster openml/t/2073 1h8c_gp3 -m aws -p 3
 # python3 runbenchmark.py perpetualbooster openml/t/189356 -f 0
 # python3 runbenchmark.py perpetualbooster openml/s/269 10m8c_gp3 -m aws -p 3
