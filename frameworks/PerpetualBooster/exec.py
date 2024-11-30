@@ -14,22 +14,8 @@ from frameworks.shared.callee import measure_inference_times
 
 log = logging.getLogger(__name__)
 
-# python3 runbenchmark.py perpetualbooster openml/t/359933 1h4c -m aws -f 0
-# python3 runbenchmark.py perpetualbooster example 1h4c -m aws -f 0
-# python3 runbenchmark.py perpetualbooster openml/s/269 1h8c_gp3 -m aws -p 4
-# python3 runbenchmark.py perpetualbooster openml/s/271 1h8c_gp3 -m aws -p 3
-# python3 runbenchmark.py perpetualbooster openml/t/359938 1h8c_gp3 -m aws -p 4
-# python3 runbenchmark.py perpetualbooster openml/t/359933 -f 0
-# python3 runbenchmark.py perpetualbooster openml/t/146820
-# python3 runbenchmark.py perpetualbooster openml.org/t/361940
-# python3 runbenchmark.py perpetualbooster openml/t/2073 1h8c_gp3 -m aws -p 3
-# python3 runbenchmark.py perpetualbooster openml/t/189356 -f 0
-# python3 runbenchmark.py perpetualbooster openml/s/269 10m8c_gp3 -m aws -p 3
-# python3 runbenchmark.py perpetualbooster openml/s/271 10m8c_gp3 -m aws -p 3
-# python3 runbenchmark.py autogluon_bestquality openml/s/269 5m8c_gp3 -m aws -p 3
-# python3 runbenchmark.py autogluon_bestquality openml/s/271 10m8c_gp3 -m aws -p 3
-# python3 runbenchmark.py perpetualbooster regression_add 4h8c_gp3 -m aws -p 3
-# python3 runbenchmark.py autogluon_bestquality openml/t/7319 ag_gp3 -m aws -p 3
+# python3 runbenchmark.py perpetualbooster regression 1h8c_gp3 -m aws -p 3
+# python3 runbenchmark.py autogluon_bestquality openml/t/359929 ag_gp3 -m aws -p 3
 
 
 def run(dataset: Dataset, config: TaskConfig):
