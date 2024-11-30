@@ -39,7 +39,7 @@ def load_oml_benchmark(benchmark: str) -> tuple[str, str | None, list[Namespace]
     if oml_type == 't':
         log.info("Loading openml task %s.", oml_id)
         # We first have the retrieve the task because we don't know the dataset id
-        t = openml.tasks.get_task(oml_id, download_data=False, download_qualities=False)
+        t = openml.tasks.get_task(int(oml_id), download_data=False, download_qualities=False)
         data = openml.datasets.get_dataset(t.dataset_id, download_data=False, download_qualities=False)
         tasks = [Namespace(name=str_sanitize(data.name),
                            description=data.description,

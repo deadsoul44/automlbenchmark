@@ -29,6 +29,7 @@ log = logging.getLogger(__name__)
 # python3 runbenchmark.py autogluon_bestquality openml/s/269 5m8c_gp3 -m aws -p 3
 # python3 runbenchmark.py autogluon_bestquality openml/s/271 10m8c_gp3 -m aws -p 3
 # python3 runbenchmark.py perpetualbooster regression_add 4h8c_gp3 -m aws -p 3
+# python3 runbenchmark.py autogluon_bestquality openml/t/7319 ag_gp3 -m aws -p 3
 
 
 def run(dataset: Dataset, config: TaskConfig):
