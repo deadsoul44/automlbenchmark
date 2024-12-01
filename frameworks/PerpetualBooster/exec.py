@@ -15,7 +15,7 @@ from frameworks.shared.callee import measure_inference_times
 log = logging.getLogger(__name__)
 
 # python3 runbenchmark.py perpetualbooster regression 1h8c_gp3 -m aws -p 3
-# python3 runbenchmark.py autogluon_bestquality openml/t/361940 ag_gp3 -m aws -p 3
+# python3 runbenchmark.py autogluon_bestquality openml/t/7326 ag_gp3 -m aws -p 3
 
 
 def run(dataset: Dataset, config: TaskConfig):
