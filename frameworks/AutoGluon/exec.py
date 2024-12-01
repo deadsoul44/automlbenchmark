@@ -104,6 +104,7 @@ def run(dataset, config):
             time_limit=time_limit,
             excluded_model_types = ['KNN', 'NN', 'XT', 'RF', 'FASTAI'],
             hyperparameters = 'very_light',
+            memory_limit=(config.max_mem_size_mb / 1000) * 0.8
             **training_params
         )
 
