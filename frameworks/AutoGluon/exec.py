@@ -108,7 +108,7 @@ def run(dataset, config):
             train_data=train_path,
             time_limit=time_limit,
             excluded_model_types = ['KNN', 'NN', 'XT', 'RF', 'FASTAI', 'NN_TORCH'],
-            hyperparameters = 'very_light',
+            hyperparameters = 'toy',
             memory_limit=memory_limit,
             **training_params
         )
