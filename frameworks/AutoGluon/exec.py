@@ -102,6 +102,8 @@ def run(dataset, config):
         ).fit(
             train_data=train_path,
             time_limit=time_limit,
+            excluded_model_types = ['KNN', 'XT' ,'RF'],
+            hyperparameters = 'very_light',
             **training_params
         )
 
