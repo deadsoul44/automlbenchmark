@@ -93,11 +93,6 @@ def run(dataset, config):
 
     models_dir = tempfile.mkdtemp() + os.sep  # passed to AG
 
-    memory_limit = (config.max_mem_size_mb / 1000) * 0.5
-
-    print("training_params:")
-    print(training_params)
-
     with Timer() as training:
         predictor = TabularPredictor(
             label=label,
@@ -107,9 +102,6 @@ def run(dataset, config):
         ).fit(
             train_data=train_path,
             time_limit=time_limit,
-            excluded_model_types = ['KNN', 'NN', 'XT', 'RF', 'FASTAI', 'NN_TORCH'],
-            hyperparameters = 'toy',
-            memory_limit=memory_limit,
             **training_params
         )
 
