@@ -6,17 +6,11 @@
 - name: COMET_MC
   openml_task_id: 14949
 
-- name: delays_zurich_transport
-  openml_task_id: 146542
-
 - name: subset_higgs
   openml_task_id: 361955
 
 - name: friedman1
   openml_task_id: 361939
-
-- name: chen_10_null
-  openml_task_id: 361943
 
 - name: bates_regr_100
   openml_task_id: 361940
@@ -29,3 +23,9 @@
 
 - name: BNG(libras_move)
   openml_task_id: 7327
+
+- name: BNG(pbc)
+  openml_task_id: 7318
+
+- name: BNG(autoHorse)
+  openml_task_id: 7319
