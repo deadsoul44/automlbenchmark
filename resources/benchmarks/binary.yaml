@@ -1,0 +1,31 @@
+---
+
+- name: Higgs
+  openml_task_id: 362113
+
+- name: prostate
+  openml_task_id: 361945
+
+- name: colon
+  openml_task_id: 361938
+
+- name: breast
+  openml_task_id: 361942
+
+- name: bates_classif_100
+  openml_task_id: 361941
+
+- name: sf-police-incidents
+  openml_task_id: 359994
+
+- name: Click_prediction_small
+  openml_task_id: 7291
+
+- name: poker
+  openml_task_id: 3506
+
+- name: Stagger2
+  openml_task_id: 146095
+
+- name: SEA(50000)
+  openml_task_id: 230
