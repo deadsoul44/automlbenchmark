@@ -21,8 +21,8 @@
 - name: Click_prediction_small
   openml_task_id: 7291
 
-- name: poker
-  openml_task_id: 3506
+- name: BNG(trains)
+  openml_task_id: 208
 
 - name: Stagger2
   openml_task_id: 146095
