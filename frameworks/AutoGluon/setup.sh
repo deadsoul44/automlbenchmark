@@ -49,6 +49,8 @@ else
     $UV pip install tabular/[skex]
 fi
 
+$UV pip install --no-cache-dir -U "numpy==2.1.3"
+
 # Note: `setuptools` being present in the venv will cause torch==1.4.x to raise an exception for an unknown reason in AMLB.
 echo "Finished setup, testing autogluon install..."
 
