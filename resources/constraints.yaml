@@ -58,7 +58,7 @@ test:
 
 ag_gp3:
   folds: 10
-  max_runtime_seconds: 22
+  max_runtime_seconds: 15
   cores: 8
   min_vol_size_mb: 100000
   ec2_volume_type: gp3
