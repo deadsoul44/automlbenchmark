@@ -18,6 +18,7 @@ log = logging.getLogger(__name__)
 # python3 runbenchmark.py autogluon_bestquality openml/t/146163 ag_gp3 -m aws -p 3
 # python3 runbenchmark.py perpetualbooster binary 4h8c_gp3 -m aws -p 3
 # python3 runbenchmark.py perpetualbooster openml/t/146163 4h8c_gp3 -m aws -p 3
+# python3 runbenchmark.py perpetualbooster multiclass 4h8c_gp3 -m aws -p 3
 
 
 def run(dataset: Dataset, config: TaskConfig):
@@ -42,7 +43,7 @@ def run(dataset: Dataset, config: TaskConfig):
 
     with Timer() as training:
         model = PerpetualBooster(objective=objective)
-        model.fit(X_train, y_train, budget=0.5, timeout=timeout, memory_limit=memory_limit, iteration_limit=10000)
+        model.fit(X_train, y_train, budget=0.1, timeout=timeout, memory_limit=memory_limit, iteration_limit=10000)
     log.info(f"Finished fit in {training.duration}s.")
     log.info(f"Number of trees: {model.number_of_trees}.")
 

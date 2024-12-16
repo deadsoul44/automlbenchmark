@@ -1,0 +1,31 @@
+---
+
+- name: KDDCup99
+  openml_task_id: 360916
+
+- name: BNG(letter)
+  openml_task_id: 146042
+
+- name: BNG(primary-tumor)
+  openml_task_id: 146086
+
+- name: BNG(soybean)
+  openml_task_id: 146004
+
+- name: CovPokElec
+  openml_task_id: 146010
+
+- name: BNG(vowel)
+  openml_task_id: 145827
+
+- name: poker-hand
+  openml_task_id: 145931
+
+- name: LED(50000)
+  openml_task_id: 146015
+
+- name: BNG(optdigits)
+  openml_task_id: 146164
+
+- name: BNG(mfeat-zernike)
+  openml_task_id: 146046
