@@ -18,7 +18,7 @@ log = logging.getLogger(__name__)
 # python3 runbenchmark.py autogluon_bestquality openml/t/146163 ag_gp3 -m aws -p 3
 # python3 runbenchmark.py perpetualbooster binary 4h8c_gp3 -m aws -p 3
 # python3 runbenchmark.py perpetualbooster openml/t/146163 4h8c_gp3 -m aws -p 3
-# python3 runbenchmark.py perpetualbooster multiclass 4h8c_gp3 -m aws -p 3
+# python3 runbenchmark.py perpetualbooster multiclass_add 4h8c_gp3 -m aws -p 3
 
 
 def run(dataset: Dataset, config: TaskConfig):
