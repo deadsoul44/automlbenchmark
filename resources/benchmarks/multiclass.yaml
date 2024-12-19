@@ -1,7 +1,7 @@
 ---
 
-- name: KDDCup99
-  openml_task_id: 360916
+- name: BNG(mfeat-fourier)
+  openml_task_id: 2141
 
 - name: BNG(letter)
   openml_task_id: 146042
@@ -15,8 +15,8 @@
 - name: CovPokElec
   openml_task_id: 146010
 
-- name: BNG(vowel)
-  openml_task_id: 145827
+- name: BNG(mfeat-karhunen)
+  openml_task_id: 146045
 
 - name: poker-hand
   openml_task_id: 145931
