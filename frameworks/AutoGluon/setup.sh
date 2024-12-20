@@ -34,15 +34,18 @@ UV="${PY_EXEC_NO_ARGS} -m uv"
 if [[ "$VERSION" == "stable" ]]; then
     $UV pip install --no-cache-dir -U "${PKG}"
     $UV pip install --no-cache-dir -U "${PKG}.tabular[skex]"
+    $UV pip install --no-cache-dir -U "pyinstaller"
 elif [[ "$VERSION" =~ ^[0-9] ]]; then
     $UV pip install --no-cache-dir -U "${PKG}==${VERSION}"
     $UV pip install --no-cache-dir -U "${PKG}.tabular[skex]==${VERSION}"
+    $UV pip install --no-cache-dir -U "pyinstaller"
 else
     TARGET_DIR="${HERE}/lib/${PKG}"
     rm -Rf ${TARGET_DIR}
     git clone --depth 1 --single-branch --branch ${VERSION} --recurse-submodules ${REPO} ${TARGET_DIR}
     cd ${TARGET_DIR}
     PY_EXEC_DIR=$(dirname "$PY_EXEC_NO_ARGS")
+    $UV pip install --no-cache-dir -U "pyinstaller"
 
     # Install in non-editable mode to avoid interaction with other pre-existing AutoGluon installations
     env PATH="$PY_EXEC_DIR:$PATH" bash -c "./full_install.sh --non-editable"
