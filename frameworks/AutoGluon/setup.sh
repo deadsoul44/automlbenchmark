@@ -35,12 +35,14 @@ if [[ "$VERSION" == "stable" ]]; then
     $UV pip install --no-cache-dir -U "${PKG}"
     $UV pip install --no-cache-dir -U "${PKG}.tabular[skex]"
     $UV pip install --no-cache-dir -U "pyinstaller"
-    $UV pip install --no-cache-dir -U "setuptools==59.8.0"
+    $UV pip install --no-cache-dir "setuptools==59.8.0"
+    $UV pip install --no-cache-dir "numpy==1.24.0"
 elif [[ "$VERSION" =~ ^[0-9] ]]; then
     $UV pip install --no-cache-dir -U "${PKG}==${VERSION}"
     $UV pip install --no-cache-dir -U "${PKG}.tabular[skex]==${VERSION}"
     $UV pip install --no-cache-dir -U "pyinstaller"
-    $UV pip install --no-cache-dir -U "setuptools==59.8.0"
+    $UV pip install --no-cache-dir "setuptools==59.8.0"
+    $UV pip install --no-cache-dir "numpy==1.24.0"
 else
     TARGET_DIR="${HERE}/lib/${PKG}"
     rm -Rf ${TARGET_DIR}
@@ -48,7 +50,8 @@ else
     cd ${TARGET_DIR}
     PY_EXEC_DIR=$(dirname "$PY_EXEC_NO_ARGS")
     $UV pip install --no-cache-dir -U "pyinstaller"
-    $UV pip install --no-cache-dir -U "setuptools==59.8.0"
+    $UV pip install --no-cache-dir "setuptools==59.8.0"
+    $UV pip install --no-cache-dir "numpy==1.24.0"
 
     # Install in non-editable mode to avoid interaction with other pre-existing AutoGluon installations
     env PATH="$PY_EXEC_DIR:$PATH" bash -c "./full_install.sh --non-editable"
