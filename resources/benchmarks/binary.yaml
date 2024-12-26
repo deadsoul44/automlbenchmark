@@ -24,8 +24,8 @@
 - name: BNG(trains)
   openml_task_id: 208
 
-- name: Stagger2
-  openml_task_id: 146095
+- name: BNG(spambase)
+  openml_task_id: 146163
 
 - name: SEA(50000)
   openml_task_id: 230
